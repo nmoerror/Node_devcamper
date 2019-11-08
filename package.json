@@ -1,0 +1,23 @@
+{
+  "name": "devcamp",
+  "version": "1.0.0",
+  "description": "devcamp_server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nomarginoferror/Node_devcamper.git"
+  },
+  "author": "Alejandro G.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nomarginoferror/Node_devcamper/issues"
+  },
+  "homepage": "https://github.com/nomarginoferror/Node_devcamper#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}
