@@ -1,10 +1,23 @@
 const express = require('express');
 const dotenv = require('dotenv');
-
-//load env
+const morgan = require('morgan');
 dotenv.config({ path: './config/config.env' });
 
+//Load files
+const bootcamps = require('./routes/bootcamps');
+
 const app = express();
+
+if (process.env.NODE_ENV === 'developement') {
+  app.use(morgan('dev'));
+}
+
+//Mount Routers
+app.use('/api/v1/bootcamps', bootcamps);
+
+app.get('/', (req, res) => {
+  res.status(400).json({ success: false });
+});
 
 const PORT = process.env.PORT || 5000;
 
