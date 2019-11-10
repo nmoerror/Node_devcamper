@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const morgan = require('morgan');
 dotenv.config({ path: './config/config.env' });
 const connectDB = require('./config/db');
+const errorHandler = require('./middleware/error');
 
 connectDB();
 
@@ -19,10 +20,7 @@ if (process.env.NODE_ENV === 'developement') {
 
 //Mount Routers
 app.use('/api/v1/bootcamps', bootcamps);
-
-app.get('/', (req, res) => {
-  res.status(400).json({ success: false });
-});
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
